@@ -7,11 +7,11 @@
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "howto.html",
+    "href": "howto.html",
+    "title": "Contains How-tos",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Contains howtos"
   },
   {
     "objectID": "howtos/quarto_website.html",
@@ -26,13 +26,6 @@
     "title": "Presentations Example",
     "section": "",
     "text": "This page contains presentations from HPC Journal Club."
-  },
-  {
-    "objectID": "howto.html",
-    "href": "howto.html",
-    "title": "Contains How-tos",
-    "section": "",
-    "text": "Contains howtos"
   },
   {
     "objectID": "presentations.html",
