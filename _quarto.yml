@@ -3,12 +3,45 @@ project:
   output-dir: docs
 
 website:
-  title: "hpc-jc-website"
+  title: HPC Journal Club
+  site-url: "https://baldikacti.github.io/hpc-jc-website/"
+  repo-url: https://github.com/baldikacti/hpc-jc-website
+  page-footer:
+    left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+  
   navbar:
+    background: primary
+    align: center
+    title: false
+    collapse-below: lg
+    
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Overview"
+        href: index.qmd
+      - text: "HowTo"
+        href: howto.qmd
+      - text: "Presentations"
+        href: presentations.qmd
+   
+    right:
+      - icon: github
+        href: "https://github.com/baldikacti/hpc-jc-website"
+  
+  sidebar:
+     - id: howto
+       title: "HowTo"
+       contents:
+         - howto.qmd
+         - auto: howtos
+     - id: presentations
+       title: "Presentations"
+       contents:
+         - presentations.qmd
+         - auto: presentations
+ 
+  # Options
+  reader-mode: true
+  page-navigation: true
 
 format:
   html:
@@ -16,5 +49,7 @@ format:
     css: styles.css
     toc: true
 
-editor: visual
+execute:
+  freeze: auto
 
+editor: visual
