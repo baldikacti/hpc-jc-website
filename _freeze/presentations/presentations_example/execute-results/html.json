@@ -1,0 +1,20 @@
+{
+  "hash": "3e08396555d13f4118b356f74caee954",
+  "result": {
+    "markdown": "---\ntitle: \"Presentation Example\"\nformat:\n  revealjs: \n    slide-number: true\n    preview-links: auto\n---\n\n\n## Hello, There\n\nThis presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including:\n\n-   Presenting code and LaTeX equations\n-   Including computations in slide output\n-   Image, video, and iframe backgrounds\n-   Fancy transitions and animations\n-   Printing to PDF\n\n...and much more\n\n## Pretty Code {auto-animate=\"true\"}\n\n-   Over 20 syntax highlighting themes available\n-   Default theme optimized for accessibility\n\n``` r\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot <- renderPlot({\n    # Render a barplot\n  })\n}\n```\n\n::: footer\nLearn more: [Syntax Highlighting](https://quarto.org/docs/output-formats/html-code.html#highlighting)\n:::\n\n## Code Animations {auto-animate=\"true\"}\n\n-   Over 20 syntax highlighting themes available\n-   Default theme optimized for accessibility\n\n``` r\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot <- renderPlot({\n    # Render a barplot\n    barplot(WorldPhones[,input$region]*1000, \n            main=input$region,\n            ylab=\"Number of Telephones\",\n            xlab=\"Year\")\n  })\n}\n```\n\n::: footer\nLearn more: [Code Animations](https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations)\n:::\n\n## Line Highlighting\n\n-   Highlight specific lines for emphasis\n-   Incrementally highlight additional lines\n\n``` {.python code-line-numbers=\"4-5|7|10\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\n::: footer\nLearn more: [Line Highlighting](https://quarto.org/docs/presentations/revealjs/#line-highlighting)\n:::\n\n## Executable Code\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n```\n\n::: {.cell-output-display}\n![](presentations_example_files/figure-revealjs/unnamed-chunk-1-1.png){width=960}\n:::\n:::\n\n\n::: footer\nLearn more: [Executable Code](https://quarto.org/docs/presentations/revealjs/#executable-code)\n:::\n",
+    "supporting": [
+      "presentations_example_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,5 +1,5 @@
 ---
-title: Contains How-tos
+title: Overview
 ---
 
-Contains howtos
+This section contains how-to's covered in the UMass HPC Journal Club.

@@ -1,5 +1,5 @@
 ---
-title: Contains Presentations
+title: Overview
 ---
 
-Contains presentations.
+This section contains presentations covered in the UMass HPC Journal Club.

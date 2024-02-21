@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "hpc-jc-website",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
     "objectID": "howto.html",
     "href": "howto.html",
-    "title": "Contains How-tos",
+    "title": "Overview",
     "section": "",
-    "text": "Contains howtos"
+    "text": "This section contains how-to’s covered in the UMass HPC Journal Club."
   },
   {
     "objectID": "howtos/quarto_website.html",
@@ -21,17 +14,52 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "presentations/presentations_example.html",
-    "href": "presentations/presentations_example.html",
-    "title": "Presentations Example",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "hpc-jc-website",
     "section": "",
-    "text": "This page contains presentations from HPC Journal Club."
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "presentations/presentations_example.html#hello-there",
+    "href": "presentations/presentations_example.html#hello-there",
+    "title": "Presentation Example",
+    "section": "Hello, There",
+    "text": "Hello, There\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nPrinting to PDF\n\n…and much more"
+  },
+  {
+    "objectID": "presentations/presentations_example.html#pretty-code",
+    "href": "presentations/presentations_example.html#pretty-code",
+    "title": "Presentation Example",
+    "section": "Pretty Code",
+    "text": "Pretty Code\n\nOver 20 syntax highlighting themes available\nDefault theme optimized for accessibility\n\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot <- renderPlot({\n    # Render a barplot\n  })\n}\n\nLearn more: Syntax Highlighting"
+  },
+  {
+    "objectID": "presentations/presentations_example.html#code-animations",
+    "href": "presentations/presentations_example.html#code-animations",
+    "title": "Presentation Example",
+    "section": "Code Animations",
+    "text": "Code Animations\n\nOver 20 syntax highlighting themes available\nDefault theme optimized for accessibility\n\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot <- renderPlot({\n    # Render a barplot\n    barplot(WorldPhones[,input$region]*1000, \n            main=input$region,\n            ylab=\"Number of Telephones\",\n            xlab=\"Year\")\n  })\n}\n\nLearn more: Code Animations"
+  },
+  {
+    "objectID": "presentations/presentations_example.html#line-highlighting",
+    "href": "presentations/presentations_example.html#line-highlighting",
+    "title": "Presentation Example",
+    "section": "Line Highlighting",
+    "text": "Line Highlighting\n\nHighlight specific lines for emphasis\nIncrementally highlight additional lines\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\nLearn more: Line Highlighting"
+  },
+  {
+    "objectID": "presentations/presentations_example.html#executable-code",
+    "href": "presentations/presentations_example.html#executable-code",
+    "title": "Presentation Example",
+    "section": "Executable Code",
+    "text": "Executable Code\n\nlibrary(ggplot2)\nggplot(mtcars, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\")\n\n\n\nLearn more: Executable Code"
   },
   {
     "objectID": "presentations.html",
     "href": "presentations.html",
-    "title": "Contains Presentations",
+    "title": "Overview",
     "section": "",
-    "text": "Contains presentations."
+    "text": "This section contains presentations covered in the UMass HPC Journal Club."
   }
 ]
