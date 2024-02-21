@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HPC Journal Club - Quarto website</title>
+<title>HPC Journal Club - Creating a Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -171,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Quarto website</h1>
+      <h1 class="quarto-secondary-nav-title">Creating a Website</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -199,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../howtos/quarto_website.html" class="sidebar-item-text sidebar-link active">Quarto website</a>
+  <a href="../howtos/quarto_website.html" class="sidebar-item-text sidebar-link active">Creating a Website</a>
   </div>
 </li>
       </ul>
@@ -209,14 +209,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start">Quick Start</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a>
+  <ul class="collapse">
+  <li><a href="#config-file" id="toc-config-file" class="nav-link" data-scroll-target="#config-file">Config File</a></li>
+  <li><a href="#website-preview" id="toc-website-preview" class="nav-link" data-scroll-target="#website-preview">Website Preview</a></li>
+  <li><a href="#website-render" id="toc-website-render" class="nav-link" data-scroll-target="#website-render">Website Render</a></li>
+  </ul></li>
+  <li><a href="#linking" id="toc-linking" class="nav-link" data-scroll-target="#linking">Linking</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Quarto website</h1>
+<h1 class="title d-none d-lg-block">Creating a Website</h1>
 </div>
 
 
@@ -231,15 +245,144 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>About this site</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Quarto Websites are a convenient way to publish groups of documents. Documents published as part of a website share navigational elements, rendering options, and visual style.</p>
+<p>Website navigation can be provided through a global navbar, a sidebar with links, or a combination of both for sites that have multiple levels of content. You can also enable full text search for websites.</p>
+<p>Quarto websites can be published to a wide variety of destinations including GitHub Pages, Netlify, Posit Connect, or any other static hosting service or intranet web server. See the documentation on <a href="https://quarto.org/docs/websites/">Publishing Websites</a> for additional details.</p>
+</section>
+<section id="quick-start" class="level2">
+<h2 class="anchored" data-anchor-id="quick-start">Quick Start</h2>
+<p>Follow the Quick Start for your tool of choice to get a simple website up and running. After covering the basics, read on to learn about website navigation and other more advanced website features.</p>
+<div class="panel-tabset" data-group="tools-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">VS Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">RStudio</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Terminal</a></li></ul>
+<div class="tab-content" data-group="tools-tabset">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>To create a new website project within VS Code, execute the <strong>Quarto: Create Project</strong> command from the command-palette:</p>
+<p><img src="images/vscode-create-project-command.png" class="img-fluid"></p>
+<p>Then, select <strong>Website Project</strong>:</p>
+<p><img src="images/vscode-create-project-website.png" class="border img-fluid"></p>
+<p>You’ll be prompted to select a parent directory to create the project within. Then, you’ll be asked to name the directory for your website project:</p>
+<p><img src="images/vscode-create-project-directory.png" class="border img-fluid"></p>
+<p>The new website project will be created and opened within VS Code. Click the <strong>Render</strong> button to preview the website:</p>
+<p><img src="images/vscode-create-project-render.png" class="img-fluid"></p>
+<p>The preview will show to the right of the source file. As you re-render <code>index.qmd</code> or render other files like <code>about.qmd</code>, the preview is automatically updated.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>To create a new website project within RStudio, use the <strong>New Project</strong> command and select <strong>Quarto Website</strong>:</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/rstudio-project-new-directory.png" class="border img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/rstudio-project-website.png" class="border img-fluid"></p>
 </div>
 </div>
+</div>
+<p>Then, provide a directory name and other relevant options for the website:</p>
+<p><img src="images/rstudio-project-website-options.png" class="border img-fluid" alt="A section of the 'New Project Wizard' menu from Rstudio. This section is titled 'Create Quarto Website'. The Quarto logo is displayed on the left. On the right are fields for 'Directory name', and 'Create project as subdirectory of:'. Underneath that are options for 'Engine'. The option for 'Engine' is set to 'None'. Underneath are options for 'Create a git repository', and 'Use visual markdown editor'.There are buttons for 'Create Project' and 'Cancel' arranged side-by-side in the bottom right of the window. There is an option to 'Open in new session' in the button left corner."></p>
+<p>Click the <strong>Render</strong> button to preview the website:</p>
+<p><img src="images/rstudio-project-website-preview.png" class="img-fluid"></p>
+<p>The preview will show to the right of the source file. As you re-render <code>index.qmd</code> or render other files like <code>about.qmd</code>, the preview is automatically updated.</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>To create a new website project from the Terminal, use the <code>quarto create project</code> command, following the prompt to select the type and to provide a name for the project (will be used as the directory name):</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create project website mysite</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will create the scaffolding for a simple website in the <code>mysite</code> sub-directory. Use the <code>quarto preview</code> command to render and preview the website:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview mysite</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The website preview will open in a new web browser. As you edit and save <code>index.qmd</code> (or other files like <code>about.qmd</code>) the preview is automatically updated.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="workflow" class="level2">
+<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
+<p>Above we have demonstrated how to create and edit a simple website. In this section we go into more depth on website workflow.</p>
+<section id="config-file" class="level3">
+<h3 class="anchored" data-anchor-id="config-file">Config File</h3>
+<p>Every website has a <code>_quarto.yml</code> config file that provides website options as well as defaults for HTML documents created within the site. For example, here is the default config file for the simple site created above:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"today"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>See the documentation on Website Navigation and Website Tools for additional details on website configuration. See HTML Documents for details on customizing HTML format options.</p>
+</section>
+<section id="website-preview" class="level3">
+<h3 class="anchored" data-anchor-id="website-preview">Website Preview</h3>
+<p>If you are using VS Code or RStudio, the <strong>Render</strong> button automatically renders and runs <code>quarto preview</code> in an embedded window. You can also do the same thing from the Terminal if need be:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># preview the website in the current directory</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that when you preview a site (either using VS Code / RStudio integrated tools or from the terminal) changes to configuration files (e.g.&nbsp;<code>_quarto.yml</code>) as well as site resources (e.g.&nbsp;theme or CSS files) will cause an automatic refresh of the preview.</p>
+<p>You can customize the behavior of the preview server (port, whether it opens a browser, etc.) using command line options or the <code>_quarto.yml</code> config file. See <code>quarto preview help</code> or the project file reference for additional details.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As you preview your site, pages will be rendered and updated. However, if you make changes to global options (e.g.&nbsp;<code>_quarto.yml</code> or included files) you need to fully re-render your site to have all of the changes reflected. Consequently, you should always fully <code>quarto render</code> your site before deploying it, even if you have already previewed changes to some pages with the preview server.</p>
+</div>
+</div>
+</section>
+<section id="website-render" class="level3">
+<h3 class="anchored" data-anchor-id="website-render">Website Render</h3>
+<p>To render (but not preview) a website, use the <code>quarto render</code> command, which will render the website into the <code>_site</code> directory by default:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Terminal</strong></pre>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># render the website in the current directory</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>See the Project Basics article to learn more about working with projects, including specifying an explicit list of files to render, as well as adding custom pre and post render scripts to your project.</p>
+</section>
+</section>
+<section id="linking" class="level2">
+<h2 class="anchored" data-anchor-id="linking">Linking</h2>
+<p>When creating links between pages in your site, you can provide the source file as the link target (rather than the <code>.html</code> file). You can also add hash identifiers (<code>#)</code> to the source file if you want to link to a particular section in the document. For example:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">about</span><span class="co">](about.qmd)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">about</span><span class="co">](about.qmd#section)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>One benefit of using this style of link as opposed to targeting <code>.html</code> files directly is that if you at some point convert your site to a book the file-based links will automatically resolve to section links for formats that produce a single file (e.g.&nbsp;PDF or MS Word).</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
