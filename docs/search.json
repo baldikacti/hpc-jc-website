@@ -7,6 +7,13 @@
     "text": "This section contains how-to’s covered in the UMass HPC Journal Club."
   },
   {
+    "objectID": "howtos/neuralnet_in_R.html",
+    "href": "howtos/neuralnet_in_R.html",
+    "title": "Neuralnetworks in R",
+    "section": "",
+    "text": "library(neuralnet)\nlibrary(tidyverse)\nlibrary(caret)\n\n\n# Using the built-in iris dataset\ndata(iris)\n\n# Optionally shuffle the dataset\nset.seed(1223)\niris <- iris[sample(nrow(iris)),]\n\n# Split the data into training and testing sets\ntrain_index <- createDataPartition(iris$Species, p = .8, list = FALSE)\ntrain_data <- iris[train_index, ]\ntest_data <- iris[-train_index, ]\n\n\n# Convert Species to a binary outcome for simplification (1 for versicolor, 0 for others)\ntrain_data$Species <- as.numeric(train_data$Species == \"versicolor\")\ntest_data$Species <- as.numeric(test_data$Species == \"versicolor\")\n\n# Define the neural network formula\nnn_formula <- Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width\n\n\ntrain_nn <- function(data) {\n  nn <- neuralnet(nn_formula, data = data, hidden = c(4, 2), linear.output = FALSE, threshold = 0.01)\n  return(nn)\n}\n\n# Train the model\niterations <- 20\n# Train the model and save it to a file after each iteration\nfor (i in 1:iterations) {\n  nn <- train_nn(train_data)\n}\n\n\npredictions_norm <- neuralnet::compute(nn, test_data[, c(\"Sepal.Length\", \"Sepal.Width\", \"Petal.Length\", \"Petal.Width\")])\n\n# Assuming binary classification, threshold the predictions\npredictions <- ifelse(predictions_norm$net.result >= 0.5, 1, 0)\n\n# Calculate accuracy\naccuracy <- sum(predictions == test_data$Species) / nrow(test_data)\nprint(paste(\"Accuracy:\", accuracy))\n\n[1] \"Accuracy: 1\"\n\n\n\nplot(nn, rep = \"best\")"
+  },
+  {
     "objectID": "howtos/quarto_website.html",
     "href": "howtos/quarto_website.html",
     "title": "Creating a Website",

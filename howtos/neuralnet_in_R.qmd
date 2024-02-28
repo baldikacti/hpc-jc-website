@@ -1,0 +1,71 @@
+---
+title: "Neuralnetworks in R"
+format: html
+---
+
+## Feedforward NN ( neuralnet is outdated btw)
+
+```{r message=FALSE}
+library(neuralnet)
+library(tidyverse)
+library(caret)
+```
+
+```{r}
+# Using the built-in iris dataset
+data(iris)
+
+# Optionally shuffle the dataset
+set.seed(1223)
+iris <- iris[sample(nrow(iris)),]
+
+# Split the data into training and testing sets
+train_index <- createDataPartition(iris$Species, p = .8, list = FALSE)
+train_data <- iris[train_index, ]
+test_data <- iris[-train_index, ]
+
+```
+
+```{r}
+# Convert Species to a binary outcome for simplification (1 for versicolor, 0 for others)
+train_data$Species <- as.numeric(train_data$Species == "versicolor")
+test_data$Species <- as.numeric(test_data$Species == "versicolor")
+
+# Define the neural network formula
+nn_formula <- Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width
+
+```
+
+```{r}
+train_nn <- function(data) {
+  nn <- neuralnet(nn_formula, data = data, hidden = c(4, 2), linear.output = FALSE, threshold = 0.01)
+  return(nn)
+}
+
+# Train the model
+iterations <- 20
+# Train the model and save it to a file after each iteration
+for (i in 1:iterations) {
+  nn <- train_nn(train_data)
+}
+
+
+```
+
+
+```{r}
+predictions_norm <- neuralnet::compute(nn, test_data[, c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")])
+
+# Assuming binary classification, threshold the predictions
+predictions <- ifelse(predictions_norm$net.result >= 0.5, 1, 0)
+
+# Calculate accuracy
+accuracy <- sum(predictions == test_data$Species) / nrow(test_data)
+print(paste("Accuracy:", accuracy))
+
+```
+
+```{r}
+plot(nn, rep = "best")
+```
+
