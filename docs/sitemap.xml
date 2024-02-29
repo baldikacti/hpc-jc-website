@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://baldikacti.github.io/hpc-jc-website/howto.html</loc>
-    <lastmod>2024-02-28T21:40:35.552Z</lastmod>
+    <lastmod>2024-02-29T13:52:20.074Z</lastmod>
+  </url>
+  <url>
+    <loc>https://baldikacti.github.io/hpc-jc-website/howtos/git_in_rstudio.html</loc>
+    <lastmod>2024-02-29T13:52:21.183Z</lastmod>
   </url>
   <url>
     <loc>https://baldikacti.github.io/hpc-jc-website/howtos/neuralnet_in_R.html</loc>
-    <lastmod>2024-02-28T21:40:37.866Z</lastmod>
+    <lastmod>2024-02-29T13:52:21.879Z</lastmod>
   </url>
   <url>
     <loc>https://baldikacti.github.io/hpc-jc-website/howtos/quarto_website.html</loc>
-    <lastmod>2024-02-28T21:40:38.743Z</lastmod>
+    <lastmod>2024-02-29T13:52:22.469Z</lastmod>
   </url>
   <url>
     <loc>https://baldikacti.github.io/hpc-jc-website/index.html</loc>
-    <lastmod>2024-02-28T21:40:39.401Z</lastmod>
+    <lastmod>2024-02-29T13:52:22.904Z</lastmod>
   </url>
   <url>
     <loc>https://baldikacti.github.io/hpc-jc-website/presentations/presentations_example.html</loc>
-    <lastmod>2024-02-28T21:40:40.684Z</lastmod>
+    <lastmod>2024-02-29T13:52:23.789Z</lastmod>
   </url>
   <url>
     <loc>https://baldikacti.github.io/hpc-jc-website/presentations.html</loc>
-    <lastmod>2024-02-28T21:40:41.299Z</lastmod>
+    <lastmod>2024-02-29T13:52:24.253Z</lastmod>
   </url>
 </urlset>
